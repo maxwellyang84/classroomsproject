@@ -11,12 +11,12 @@ async function buildSchema(){
 
     fs.writeFileSync(
         path.join(__dirname, '../data/schema.graphql.json'),
-        JSON.stringify(await graphql(Schema, introspectionQuery), null, 2);
+        JSON.stringify(await graphql(Schema, introspectionQuery), null, 2),
     );
 
     fs.writeFileSync(
-        path.join(__dirname, '../data/schema.graphql.txt')
-        printSchema(Schema);
+        path.join(__dirname, '../data/schema.graphql.txt'),
+        printSchema(Schema),
     );
 }
 

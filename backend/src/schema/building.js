@@ -1,4 +1,4 @@
-import { Building, BuildingTC } from '../models/Building';
+import { Building, BuildingTC } from '../models/building';
 
 const BuildingQuery = {
     buildingById: BuildingTC.getResolver('findById'),

@@ -1,4 +1,4 @@
-import { Classroom, ClassroomTC } from '../models/Classroom';
+import { Classroom, ClassroomTC } from '../models/classroom';
 
 const ClassroomQuery = {
     classroomById: ClassroomTC.getResolver('findById'),
