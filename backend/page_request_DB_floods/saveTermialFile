@@ -1,0 +1,21 @@
+Exiting week index 23
+Week------------------>24
+Sleeping the process for 2 seconds.
+Day--------------------------------------->2
+Entering day index 2
+Exiting day index 2
+Sleeping the process for 2 seconds.
+Day--------------------------------------->3
+Entering day index 3
+Exiting day index 3
+Sleeping the process for 2 seconds.
+Day--------------------------------------->4
+Entering day index 4
+Exiting day index 4
+Sleeping the process for 2 seconds.
+Day--------------------------------------->5
+Entering day index 5
+Traceback (most recent call last):
+  File "get_class_html_pages_firefox.py", line 76, in <module>
+    window_table = driver.window_handles[1]
+IndexError: list index out of range
