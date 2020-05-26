@@ -4,31 +4,45 @@ import { composeWithMongoose } from 'graphql-compose-mongoose';
 
 export const ActivitySchema = new Schema(
     {
-        activitytype:{
-            type: String, 
-            enum: ['LEC', 'SEM'],
-            trim: true,
+        _id:{
+            type: Schema.Types.ObjectId,
             required: true,
         },
-        activityname:{
+        Start_Time:{
             type: String,
             trim: true,
             required: true,
         },
-        building:{
+        Date:{
+            type:Date,
+            required: true,
+        },
+        Activity_Type:{
+            type: String,
+            trim: true,
+            required: true,
+        },
+        Building:{
+            type: String, 
+            trim: true,
+            required: true,
+        },
+        Building_Obj_Id:{
             type: Schema.Types.ObjectId,
-            ref: 'Buildings',
-            required: false,
+            required: true,
         },
-        classroom:{
+        Classroom:{
             type: Schema.Types.ObjectId,
-            ref: 'Classrooms',
-            required: false,
+            required: true,
         },
-        date:{
-            type: Date,
-            required: false,
+        Address: {
+            type: String,
+            required: true,
+            trim: true,
         },
+        Loc:{
+            type: String,
+        }
     },
     {
         collection: 'Activities',
