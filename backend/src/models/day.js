@@ -82,38 +82,61 @@ export const DaySchema = new Schema({
         type: [ClassroomActivitiesSchema],
         required: true,
         index: true
+    },
+    ClassroomCount:{
+        type: Number,
+        required: true
     }
 },{
     collection: '2019-09-18'
 })
 
+DaySchema.pre('validate', function (next){
+    this.ClassroomCount = this.Classroom_Activities.length;
+    console.log(this.ClassroomCount)
+    next();
+})
 DaySchema.plugin(timestamps)
 
 export const Day = mongoose.model('Day', DaySchema)
 export const DayTC = composeWithMongoose(Day)
 
-function addActivityCountResolver(TC, Model){
-    TC.addResolver({
-        name: 'getActivityCount',
-        type: Number,
-        kind: 'query',
-        resolve: ({source, args})=>{
-            let rootAggregate = Model.aggregate()
-            if (source && source._id) {
-                rootAggregate.match({ _id: { $ne : source._id }})
-            }
-            rootAggregate.project({activitycount:{$size:'$Classroom_Activities'}})
-            
-            return rootAggregate.then(results => results.map(obj => Model.hydrate(obj)));
+DayTC.addFields({
+    activityCount:{
+        type: 'Int',
+        resolve: async (source, args, context, info)=>{
+            const count = await Day.aggregate([
+                {$sum: '$Classroom_Activities'}
+            ])
+            return count
         }
-    })
-}
 
-addActivityCountResolver(DayTC, Day);
-DayTC.addRelation(
-    'activitycount',
-    {
-        resolver: DayTC.getResolver('getActivityCount'),
-        projection: {_id: true}
     }
+}
 )
+
+// function addActivityCountResolver(TC, Model){
+//     TC.addResolver({
+//         name: 'getActivityCount',
+//         type: String,
+//         kind: 'query',
+//         resolve: ({source, args})=>{
+//             // let rootAggregate = Model.aggregate()
+//             // if (source && source._id) {
+//             //     rootAggregate.match({ _id: { $ne : source._id }})
+//             // }
+//             // rootAggregate.project({activitycount:{$size:'$Classroom_Activities'}})
+            
+//             return "SUP"
+//         }
+//     })
+// }
+
+// addActivityCountResolver(DayTC, Day);
+// DayTC.addRelation(
+//     'activitycount',
+//     {
+//         resolver:()=> DayTC.getResolver('getActivityCount'),
+//         projection: {_id: true}
+//     }
+// )

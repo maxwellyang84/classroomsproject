@@ -6,13 +6,16 @@ import mongoose from 'mongoose';
 
 import './src/utils/db';
 import schema from './src/schema';
+import {typeDefs} from './src/typedefs'
+import {resolvers} from './src/resolvers'
 
 dotenv.config();
 
 const app = express();
 
 const server = new ApolloServer({
-    schema,
+    typeDefs,
+    resolvers,
     cors: true,
     playground: process.env.NODE_ENV === 'development' ? true : false,
     introspection: true,
