@@ -2,10 +2,11 @@ import {gql} from 'apollo-server-express'
 
 export const typeDefs = gql`
     type Query{
-        getActivities: Activity!
+        getActivities: [Activity!]!
         getClassrooms: [Classroom!]!
         getBuildings: [Building!]!
         getTopClassrooms: [Classroom!]!
+        getDay(sortBy: SortBy): [Day!]!
     }
     type ClassroomActivity{
         Start_Time: String!
@@ -38,6 +39,11 @@ export const typeDefs = gql`
         Classroom_Obj_Id: ID!
         Classroom_Activities: [ClassroomActivity!]!
         ActivityCount: Int!
+        ActivityFeed(first: Int, cursor:ID): ActivityFeed
+    }
+    type ActivityFeed{
+        cursor: String!
+        Classroom_Activity: [Day]
     }
     type Building{
         Complete_Name: String!
@@ -58,4 +64,13 @@ export const typeDefs = gql`
         Lat: Int!
         Lng: Int!
     }
+    enum Order{
+        ASC
+        DESC
+    }
+    input SortBy{
+        field: String!
+        order: Order!
+    }
+
 `;
