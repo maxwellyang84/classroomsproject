@@ -6,7 +6,7 @@ export const resolvers = {
     Query:{
         getActivities: ()=> Activity.find().limit(3),
         getClassrooms: ()=>"Hello",
-        getBuildings: ()=>"HEllo",
+        getBuildings: ()=>Building.find(),
         getDay: async (parent, args, context)=> {
             const sortBy = {}
             if(args.sortBy){
