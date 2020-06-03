@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar'
 import SearchTable from './components/SearchTable'
@@ -28,7 +27,11 @@ function App() {
   //   ))
 
   return(
-    <SearchTable/>
+    <div>
+      <Navbar/>
+      <SearchTable/>
+    </div>
+   
   )
     
 

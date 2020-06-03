@@ -1,12 +1,13 @@
 import mongoose from 'mongoose'
 import {Activity} from './models/activity'
 import {Day} from './models/day'
+import {Building} from './models/building'
 
 export const resolvers = {
     Query:{
         getActivities: ()=> Activity.find().limit(3),
         getClassrooms: ()=>"Hello",
-        getBuildings: ()=>Building.find(),
+        getBuildings: ()=>Building.find().sort({Abbrev_Name:1}),
         getDay: async (parent, args, context)=> {
             const sortBy = {}
             if(args.sortBy){
