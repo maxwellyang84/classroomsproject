@@ -1,3 +1,20 @@
 .building{
-    
+    font-size: 16px;
+    border-radius: 10px;
+    text-align:center;
+    margin-bottom: 15px;
+    padding: 2px 0px;
+}
+.building:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+.building-selected{
+    background-color: #C4C4C4;
+}
+
+.building-unselected{
+    background-color: white;
 }

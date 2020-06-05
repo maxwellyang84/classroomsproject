@@ -3,13 +3,17 @@ import BuildingList from './BuildingList';
 
 import Scroll from './Scroll';
 import SearchTableForm from './SearchTableForm';
+import Navbar from './Navbar';
+import './SearchTable.css'
 
 function SearchTable(){
     const [date, setDate] = useState('1999-10-01')
     const [startTime, setStartTime] = useState('2:19')
     const [endTime, setEndTime] = useState('2:10')
     return(
-        <>
+        <div className="search-table">
+            <Navbar name={"Search"}/>
+            <h3 style={{textAlign: 'center'}}>Buildings</h3>
             <Scroll>
                 <BuildingList/>
             </Scroll>
@@ -20,8 +24,9 @@ function SearchTable(){
                 setDate={setDate} 
                 setStartTime={setStartTime} 
                 setEndTime={setEndTime}
+                handleSubmit={handleSubmit}
             />
-        </>
+        </div>
     )
 }
 

@@ -4,6 +4,9 @@ import Navbar from './components/Navbar'
 import SearchTable from './components/SearchTable'
 import {gql} from 'apollo-boost';
 import {useQuery} from '@apollo/react-hooks';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const ACTIVITIES = gql`
   {
@@ -27,10 +30,16 @@ function App() {
   //   ))
 
   return(
-    <div>
-      <Navbar/>
-      <SearchTable/>
-    </div>
+    <>
+    <Navbar name={"UBC Classroom Study"}/>
+    <Container>
+      <Row>
+        <Col md={7}><SearchTable/></Col>
+        <Col md={5}>List of Classes</Col>
+      </Row>
+    </Container>
+    </>
+    
    
   )
     

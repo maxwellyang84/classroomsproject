@@ -1,9 +1,9 @@
 import React from "react";
 import './Navbar.css';
 
-function Navbar(){
+function Navbar(props){
     return(
-        <h1 className="topbar">UBC Classroom Study</h1>
+        <h1 className="topbar">{props.name}</h1>
     )
 }
 
