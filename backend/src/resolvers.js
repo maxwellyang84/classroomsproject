@@ -2,11 +2,12 @@ import mongoose from 'mongoose'
 import {Activity} from './models/activity'
 import {Day} from './models/day'
 import {Building} from './models/building'
+import {Classroom} from './models/classroom'
 
 export const resolvers = {
     Query:{
         getActivities: ()=> Activity.find().limit(3),
-        getClassrooms: ()=>"Hello",
+        getClassrooms: ()=> Classroom.find().limit(100),
         getBuildings: ()=>Building.find().sort({Abbrev_Name:1}),
         getDay: async (parent, args, context)=> {
             const sortBy = {}

@@ -13,7 +13,7 @@ function SearchTable(){
     return(
         <div className="search-table">
             <Navbar name={"Search"}/>
-            <h3 style={{textAlign: 'center'}}>Buildings</h3>
+            <h3 style={{textAlign: 'center', fontSize: "16px", textDecoration: "underline"}}>BUILDINGS</h3>
             <Scroll>
                 <BuildingList/>
             </Scroll>

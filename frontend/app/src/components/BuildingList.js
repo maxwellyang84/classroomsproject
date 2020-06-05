@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col';
 import './BuildingList.css';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import Spinner from 'react-bootstrap/Spinner'
 
 
 const BUILDINGS = gql`
@@ -28,7 +29,7 @@ function FullNameOverlay(Complete_Name, props){
 
 function BuildingList(){
     const {loading, error, data} = useQuery(BUILDINGS);
-    if(loading) return( <p>Loading...</p>);
+    if(loading) return( <Spinner animation="border"/>);
     if(error) return (<p> ERROR :(</p>);
     return (
     <Container className="building-list">
