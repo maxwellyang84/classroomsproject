@@ -7,6 +7,7 @@ import {useQuery} from '@apollo/react-hooks';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import ClassroomList from './components/ClassroomList';
 
 const ACTIVITIES = gql`
   {
@@ -35,7 +36,7 @@ function App() {
     <Container>
       <Row>
         <Col md={7}><SearchTable/></Col>
-        <Col md={5}>List of Classes</Col>
+        <Col md={5}><ClassroomList/></Col>
       </Row>
     </Container>
     </>

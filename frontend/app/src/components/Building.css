@@ -4,6 +4,7 @@
     text-align:center;
     margin-bottom: 15px;
     padding: 2px 0px;
+    border: solid 1px black;
 }
 .building:hover{
     cursor: pointer;
