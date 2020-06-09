@@ -7,6 +7,7 @@ export const typeDefs = gql`
         getBuildings: [Building!]!
         getTopClassrooms: [Classroom!]!
         getDay(sortBy: SortBy): [Day!]!
+        ClassroomPagination(pageNumber: Int!, nPerPage: Int!): [Classroom!]!
     }
     type ClassroomActivity{
         Start_Time: String!

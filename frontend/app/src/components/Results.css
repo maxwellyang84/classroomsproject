@@ -1,0 +1,9 @@
+.results{
+    margin: 30px;
+}
+
+.classroom-list-container{
+    height: 550px;
+    width: 400px;
+    position: relative;
+}

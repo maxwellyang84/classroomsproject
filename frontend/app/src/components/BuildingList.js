@@ -29,7 +29,11 @@ function FullNameOverlay(Complete_Name, props){
 
 function BuildingList(){
     const {loading, error, data} = useQuery(BUILDINGS);
-    if(loading) return( <Spinner animation="border"/>);
+    if(loading) return( 
+      <div className="center">
+             <Spinner animation="border" />
+        </div>
+      );
     if(error) return (<p> ERROR :(</p>);
     return (
     <Container className="building-list">
@@ -41,7 +45,7 @@ function BuildingList(){
             delay={{ show: 250, hide: 400 }}
             overlay={(props) => FullNameOverlay(Complete_Name, props)}
           >
-             <Building name={Abbrev_Name}/>
+             <Building name={Abbrev_Name} key={Abbrev_Name}/>
           </OverlayTrigger>  
        </Col> 
       ))}

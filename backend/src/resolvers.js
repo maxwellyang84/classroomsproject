@@ -17,6 +17,10 @@ export const resolvers = {
             return await Day.find({}).sort(sortBy).limit(5)
         },
         getTopClassrooms:()=>"Hello",
+        ClassroomPagination: (parent, {pageNumber, nPerPage}) =>{
+            const offset = (pageNumber-1)*nPerPage;
+            return Classroom.find().skip(offset).limit(nPerPage);
+        }
     },
     Day:{
         ActivityCount: parent =>{
