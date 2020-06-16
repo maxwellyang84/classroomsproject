@@ -5,7 +5,7 @@ import {useQuery} from '@apollo/react-hooks';
 import {gql} from 'apollo-boost';
 import './Results.css'
 
-const nPerPage = 8;
+const nPerPage = 4;
 
 const RESULTS_QUERY = gql`
 

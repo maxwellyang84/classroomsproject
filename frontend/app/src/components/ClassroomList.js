@@ -38,7 +38,7 @@ function ClassroomList(props){
     const classroomList = props.data.ClassroomPagination.map(({Name})=>Name);
     return classroomList.map((Name)=>
     <OverlayTrigger
-        trigger="hover"
+        trigger="click"
         key={Name}
         placement="right"
         overlay={(props) =>
