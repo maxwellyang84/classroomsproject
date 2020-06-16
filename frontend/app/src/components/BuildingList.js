@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {gql} from 'apollo-boost';
 import {useQuery} from '@apollo/react-hooks';
 import Building from './Building';
@@ -29,6 +29,7 @@ function FullNameOverlay(Complete_Name, props){
 
 function BuildingList(){
     const {loading, error, data} = useQuery(BUILDINGS);
+    const [buildingsExcluded, updateBuildingsExcluded] = useState({});
     if(loading) return( 
       <div className="center">
              <Spinner animation="border" />
@@ -45,7 +46,7 @@ function BuildingList(){
             delay={{ show: 250, hide: 400 }}
             overlay={(props) => FullNameOverlay(Complete_Name, props)}
           >
-             <Building name={Abbrev_Name} key={Abbrev_Name}/>
+             <Building name={Abbrev_Name} key={Abbrev_Name} buildingsExcluded={buildingsExcluded} updateBuildingsExcluded={updateBuildingsExcluded}/>
           </OverlayTrigger>  
        </Col> 
       ))}

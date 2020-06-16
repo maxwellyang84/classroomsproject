@@ -3,3 +3,144 @@
     border: solid 1px black;
     border-radius: 10px;
 }
+
+.search-form{
+    position: relative;
+    width: 1209px;
+    height: 107px;
+    background: #FFFFFF;
+    box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+.building-header{
+    position: absolute;
+    width: 131px;
+    height: 19px;
+    left: 20px;
+    top: 30px;
+
+    font-family: Oxygen;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+.building-subheader{
+    position: absolute;
+    width: 202px;
+    height: 30px;
+    left: 20px; 
+    top: 50px;
+
+    font-family: Oxygen;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.line-1{
+    position: absolute;
+    width: 71px;
+    height: 0px;
+    transform: rotate(90deg);
+    top: 50px;
+    left: 200px;
+    border: 1px solid #000000;
+    
+}
+
+.date-header{
+    position: absolute;
+    width: 131px;
+    height: 19px;
+    top: 30px;
+    left: 250px;
+
+    font-family: Oxygen;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.line-2{
+    position: absolute;
+    width: 71px;
+    height: 0px;
+    top: 50px;
+    left: 350px;
+    border: 1px solid #000000;
+    transform: rotate(90deg);
+}
+
+.starttime-header{
+    position: absolute;
+    width: 131px;
+    height: 19px;
+    top: 30px;
+    left: 400px;
+
+    font-family: Oxygen;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+}
+
+.line-3{
+    position: absolute;
+    width: 71px;
+    height: 0px;
+    top: 50px;
+    left: 550px;
+    border: 1px solid #000000;
+    transform: rotate(90deg);
+}
+
+.endtime-header{
+    
+    position: absolute;
+    width: 131px;
+    height: 19px;
+    top: 30px;
+    left: 600px;
+
+    font-family: Oxygen;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+.btn-primary{
+    background-color:#2D6CDF !important;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    border-radius: 20px !important;
+    width: 181px !important;
+    height: 67px !important;
+    font-size: 30px !important;
+}

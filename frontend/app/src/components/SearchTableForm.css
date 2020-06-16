@@ -5,3 +5,7 @@
 .label{
     text-align: center;
 }
+
+.btn-primary{
+    background-color:#2D6CDF !important;
+}

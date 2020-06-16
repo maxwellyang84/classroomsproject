@@ -3,7 +3,12 @@ import './Navbar.css';
 
 function Navbar(props){
     return(
-        <h1 className="topbar">{props.name}</h1>
+        <>
+            <h1 className="header">UBC Classroom Study</h1>
+            <h3 className="navigation">Contact</h3>
+            <h3 className="navigation">About</h3>
+            <h3 className="navigation">Home</h3>
+        </>
     )
 }
 

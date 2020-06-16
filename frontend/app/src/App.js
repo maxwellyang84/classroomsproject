@@ -36,6 +36,9 @@ function App() {
     <Container>
       <Row>
         <Col md={7}><SearchTable/></Col>
+        
+      </Row>
+      <Row>
         <Col md={5}><Results/></Col>
       </Row>
     </Container>
