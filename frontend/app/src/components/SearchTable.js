@@ -8,6 +8,8 @@ import './SearchTable.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
+import Overlay from 'react-bootstrap/Overlay';
+import Popover from 'react-bootstrap/Popover';
 
 function SearchTable(){
     const [date, setDate] = useState('1999-10-01')
@@ -33,6 +35,7 @@ function SearchTable(){
         </div> */}
         <div className="search-form">
             <div className="building-section">
+            
             <p className="building-header">Buildings</p>
                 <p className="building-subheader">Select Buildings to Include</p>
                 <div className="line-1"/>
@@ -44,12 +47,16 @@ function SearchTable(){
                 <Form.Control type="date" container="date-container" className="date"/>
                 <div className="line-2"/>
             </div>
-            <div>
+            <div className="starttime-section">
                 <p className="starttime-header">Start Time</p>
+                <Form.Control type="time" className="starttime"/>
                 <div className="line-3"/>
             </div>
+            <div className="endtime-section">
+                <p className="endtime-header">End Time</p>
+                <Form.Control type="time" className="endtime"/>
+            </div>
             
-            <p className="endtime-header">End Time</p>
             <Button variant="primary" type="submit">Submit</Button>
         </div>
         </>
