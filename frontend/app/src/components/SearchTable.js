@@ -8,9 +8,19 @@ import './SearchTable.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
-import Overlay from 'react-bootstrap/Overlay';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
 
+const popover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Buildings</Popover.Title>
+      <Popover.Content>
+        <BuildingList/>
+      </Popover.Content>
+    </Popover>
+  );
+  
+  
 function SearchTable(){
     const [date, setDate] = useState('1999-10-01')
     const [startTime, setStartTime] = useState('2:19')
@@ -33,15 +43,25 @@ function SearchTable(){
                 handleSubmit={handleSubmit}
             />
         </div> */}
-        <div className="search-form">
-            <div className="building-section">
-            
-            <p className="building-header">Buildings</p>
-                <p className="building-subheader">Select Buildings to Include</p>
-                <div className="line-1"/>
-            </div>
+          
                 
-            
+        <div className="search-form">
+                
+            <OverlayTrigger
+                trigger="click"
+                placement="bottom"
+                overlay={popover}
+            >
+                  <div className="building-section">
+                    <p className="building-header">Buildings</p>
+                    <p className="building-subheader">Select Buildings to Include</p>
+                    <div className="line-1"/>
+                </div>
+              
+            </OverlayTrigger>
+
+             
+           
             <div className="date-section" id="date-container">
                 <p className="date-header">Date</p>
                 <Form.Control type="date" container="date-container" className="date"/>

@@ -22,7 +22,7 @@
     border-radius: 15px;
     width: 19.5%;
     height: 100%;
-    z-index: 10;
+   
 }
 .building-section:hover{
     border: solid 1px black;
@@ -36,7 +36,6 @@
    
     left: 20px;
     top: 20px;
-    z-index: 1;
 
     font-family: Oxygen;
     font-style: normal;
@@ -55,7 +54,7 @@
     height: 30px;
     left: 20px; 
     top: 50px;
-    z-index: 0;
+
 
     font-family: Oxygen;
     font-style: normal;
@@ -75,8 +74,7 @@
     top: 50px;
     left: 200px;
     border: 0.1px solid #000000;
-    z-index: 0;
-    
+ 
 }
 
 .date-section{
@@ -231,6 +229,10 @@
     width: 130px !important;
     height: 50px !important;
     font-size: 22px !important;
-    
-    
+}
+
+.btn-primary:hover{
+    width: 135px !important;
+    height: 51px !important;
+    background-color: #5B92F5 !important;
 }

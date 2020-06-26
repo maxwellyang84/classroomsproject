@@ -35,8 +35,8 @@ function App() {
     <Navbar name={"UBC Classroom Study"}/>
     <Container>
       <Row>
-        <Col md={7}><SearchTable/></Col>
         
+        <SearchTable/>
       </Row>
       <Row>
         <Col md={5}><Results/></Col>
