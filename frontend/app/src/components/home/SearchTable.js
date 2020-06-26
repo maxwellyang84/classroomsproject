@@ -3,7 +3,7 @@ import BuildingList from './BuildingList';
 
 import Scroll from './Scroll';
 import SearchTableForm from './SearchTableForm';
-import Navbar from './Navbar';
+import Navbar from '../common/Navbar';
 import './SearchTable.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
