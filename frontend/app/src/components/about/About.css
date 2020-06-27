@@ -1,0 +1,25 @@
+.about{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 50%;
+    box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    height: 70%;
+    padding: 50px 100px;
+    margin-top: 20px;
+}
+
+.about-header{
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: solid 1px black;
+}
+
+.about-text{
+    
+}

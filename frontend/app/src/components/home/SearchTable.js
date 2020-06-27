@@ -10,6 +10,7 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
+import {Link, useRouteMatch} from 'react-router-dom';
 
 const popover = (
     <Popover id="popover-basic">
@@ -25,6 +26,7 @@ function SearchTable(){
     const [date, setDate] = useState('1999-10-01')
     const [startTime, setStartTime] = useState('2:19')
     const [endTime, setEndTime] = useState('2:10')
+    let {url} = useRouteMatch();
     return(
         <>
         {/* <div className="search-table">
@@ -77,7 +79,7 @@ function SearchTable(){
                 <Form.Control type="time" className="endtime"/>
             </div>
             
-            <Button variant="primary" type="submit">Submit</Button>
+            <Link to={ `/search`}><Button variant="primary" type="submit">Submit</Button></Link>
         </div>
         </>
     )
