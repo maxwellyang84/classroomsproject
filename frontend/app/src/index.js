@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import ApolloClient from 'apollo-boost';
 import {ApolloProvider} from '@apollo/react-hooks';
 import {BrowserRouter} from 'react-router-dom';
+import 'react-dates/initialize';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 

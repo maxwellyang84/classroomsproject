@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Navbar from '../common/Navbar';
 import SearchTable from './SearchTable';
 import Container from 'react-bootstrap/Container';
@@ -11,18 +11,25 @@ import {Switch, Route, useRouteMatch} from 'react-router-dom';
 
 function Home(){
   let {path, url} = useRouteMatch();
+  const [search, setSearch] = useState(false);
   console.log(path);
+  console.log(url);
+
     return(
         <>
         <Container>
           <Row>      
-            <SearchTable/>
+            <SearchTable search={search} setSearch={setSearch}/>
           </Row>
           <Row>
-            <Switch>
+            {search ?
+              <Col md={5}><Results/></Col>:
+              <Instructions/>
+          }
+            {/* <Switch>
               <Route exact path={path} component={Instructions}></Route>
               <Route path={`${path}search`} ><Col md={5}><Results/></Col></Route>
-            </Switch>
+            </Switch> */}
             
           </Row>
         </Container>

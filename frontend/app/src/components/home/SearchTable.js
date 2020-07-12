@@ -11,8 +11,13 @@ import Container from 'react-bootstrap/Container';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
 import {Link, useRouteMatch} from 'react-router-dom';
+import 'react-dates/initialize';
+import 'react-dates/lib/css/_datepicker.css';
 
-const popover = (
+import {SingleDatePicker} from 'react-dates';
+
+
+const buildingPopover = (
     <Popover id="popover-basic">
       <Popover.Title as="h3">Buildings</Popover.Title>
       <Popover.Content>
@@ -20,13 +25,18 @@ const popover = (
       </Popover.Content>
     </Popover>
   );
+
+
   
   
-function SearchTable(){
-    const [date, setDate] = useState('1999-10-01')
+function SearchTable(props){
+    const [date, setDate] = useState(null)
     const [startTime, setStartTime] = useState('2:19')
     const [endTime, setEndTime] = useState('2:10')
-    let {url} = useRouteMatch();
+    const [focused, setFocused] = useState(true)
+    
+   
+
     return(
         <>
         {/* <div className="search-table">
@@ -52,7 +62,7 @@ function SearchTable(){
             <OverlayTrigger
                 trigger="click"
                 placement="bottom"
-                overlay={popover}
+                overlay={buildingPopover}
             >
                   <div className="building-section">
                     <p className="building-header">Buildings</p>
@@ -63,12 +73,32 @@ function SearchTable(){
             </OverlayTrigger>
 
              
-           
-            <div className="date-section" id="date-container">
+         
+                <div className="date-section" id="date-container">
                 <p className="date-header">Date</p>
-                <Form.Control type="date" container="date-container" className="date"/>
+                <div className="date">
+                    <SingleDatePicker
+                        date={date} // momentPropTypes.momentObj or null
+                        onDateChange={date => {
+                            console.log(date)
+                            setDate(date)}} // PropTypes.func.isRequired
+                        focused={focused} // PropTypes.bool
+                        onFocusChange={({ focused }) => setFocused(focused)} // PropTypes.func.isRequired
+                        id="your_unique_id" // PropTypes.string.isRequired,
+                        placeholder=""
+                        noBorder={true}
+                        customInputIcon={
+                            <p className="date-header">Date</p>
+                        }
+                        numberOfMonths={1}
+                    />
+                </div>
+               
+                
                 <div className="line-2"/>
-            </div>
+                </div>
+           
+            
             <div className="starttime-section">
                 <p className="starttime-header">Start Time</p>
                 <Form.Control type="time" className="starttime"/>
@@ -79,7 +109,7 @@ function SearchTable(){
                 <Form.Control type="time" className="endtime"/>
             </div>
             
-            <Link to={ `/search`}><Button variant="primary" type="submit">Submit</Button></Link>
+            <Button variant="primary" type="submit" onClick={()=>props.setSearch(true)}>Submit</Button>
         </div>
         </>
     )
@@ -87,6 +117,7 @@ function SearchTable(){
 
 const handleSubmit = (e, date, startTime, endTime)=>{
     e.preventDefault()
+
     console.log(date)
     console.log(startTime)
     console.log(endTime)

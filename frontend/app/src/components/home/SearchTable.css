@@ -110,11 +110,11 @@
 }
 
 .date{
-    position: absolute;
+    position: absolute !important;
     width: 180px !important;
     height: 30px !important;
-    top: 50px;
-    left: 20px;
+    top: 50px !important;
+    left: 20px !important;
     
 }
 
